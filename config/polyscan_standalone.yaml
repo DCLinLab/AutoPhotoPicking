@@ -4,7 +4,13 @@ scan:
   interval: 1
 
 img_proc:
-  sigma: 3
+  debug: True
+  checkerboard: False
+  checkerboard_row: 10
+  checkerboard_col: 10
+  sigma1: 3
+  sigma2: 31
+  save_dir: F:\masks
 
 tcpip:
   host: localhost

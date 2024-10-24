@@ -1,31 +1,49 @@
 import socket
 import struct
+
 import numpy as np
 import time
 import yaml
-from skimage.filters import gaussian, threshold_otsu
-from skimage.util import img_as_ubyte
-from skimage.io import imread
+from skimage.data import checkerboard
+from skimage.filters import difference_of_gaussians, threshold_otsu
+from skimage.io import imread, imsave
 from pathlib import Path
 import warnings
 from traceback import print_exc
+from datetime import datetime
+
+from skimage.util import img_as_ubyte
+
+from utils.checkerboard_pattern import generate_checkerboard_mask
+import matplotlib.pyplot as plt
 
 
-def img_proc(img, sigma):
-    img = gaussian(img, sigma)
-    t = threshold_otsu(img)
-    img = img > t
-    return img_as_ubyte(img)
+def img_proc(img):
+    img = difference_of_gaussians(img, sigma1, sigma2)
+    img = img > threshold_otsu(img)
+    if checkerboard:
+        g = generate_checkerboard_mask(img.shape, nrow, ncol)
+        img &= g
+    if debug:
+        plt.imshow(img, cmap='gray')
+        plt.axis('off')
+        plt.show()
+    imsave(save_dir / (datetime.now().strftime('%Y-%m-%d_%H-%M-%S') + '.png'), img_as_ubyte(img))
+    return img * np.ones(img.shape)
 
 
-def Convert(img8):
-    s = img8.shape
-    a = img8.reshape(s[0] * s[1] // 8, 8)
-    a2 = np.ones(a.shape)
+def Convert(img):
+    width = img.shape[1]
+    n = width % 8
+    if n != 0:
+        pad = np.zeros((img.shape[0], 8 - n), dtype=np.uint8)
+        img = np.hstack((img, pad))
+    a = img.reshape(img.size // 8, 8)
+    a2 = np.ones_like(a)
     for i in range(7):
         a2[:, i] = 1 << (7 - i)
     a = a * a2
-    return a.sum(axis=1)
+    return a.sum(axis=1).astype('uint8')
 
 
 def SoftwareTrigger(s, dev):
@@ -55,13 +73,19 @@ if __name__ == '__main__':
         config = yaml.safe_load(f)
     scan_interval = config['scan']['interval']
     tdir = Path(config['scan']['dir'])
-    sigma = config['img_proc']['sigma']
+    sigma1 = config['img_proc']['sigma1']
+    sigma2 = config['img_proc']['sigma2']
     key = config['scan']['keyword']
     trigger = config['tcpip']['trigger_name']
     host = config['tcpip']['host']
     port = config['tcpip']['port']
     port_trigger = config['tcpip']['port_trigger']
-    # start connection
+    debug = config['img_proc']['debug']
+    checkerboard = config['img_proc']['checkerboard']
+    nrow = config['img_proc']['checkerboard_row']
+    ncol = config['img_proc']['checkerboard_col']
+    save_dir = Path(config['img_proc']['save_dir'])
+    save_dir.mkdir(exist_ok=True, parents=True)
 
     # loop
     existing_files = set(str(i) for i in tdir.rglob(f'*{key}*'))
@@ -76,9 +100,11 @@ if __name__ == '__main__':
                     warnings.warn('More than 1 new image detected, assume the latest one.')
                 file = max(new_files, key=lambda p: p.stat().st_mtime)
                 print('Detected new image {}'.format(file))
+
                 img = imread(file)
-                img = img_proc(img, sigma)
+                img = img_proc(img)
                 pat = Convert(img)
+
                 func = np.uint32(2)
                 w = np.uint32(img.shape[1])
                 h = np.uint32(img.shape[0])
@@ -86,12 +112,12 @@ if __name__ == '__main__':
                 s.send(w)
                 s.send(h)
                 s.send(pat)
+
                 # software trigger
                 SoftwareTrigger(s_trigger, trigger)
-            time.sleep(scan_interval)
         except:
             print_exc()
         finally:
             s.close()
-    # end connection
-    print('over.')
+            s_trigger.close()
+        time.sleep(scan_interval)

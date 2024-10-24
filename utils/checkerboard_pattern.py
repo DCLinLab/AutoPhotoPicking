@@ -19,14 +19,14 @@ def generate_checkerboard_mask(size, nrow, ncol):
     square_width = size[1] // ncol
 
     # Create an empty mask
-    mask = np.zeros(size, dtype=np.uint8)
+    mask = np.zeros(size, dtype=bool)
 
     # Fill the mask with the checkerboard pattern
     for i in range(nrow):
         for j in range(ncol):
             if (i + j) % 2 == 0:
                 mask[i * square_height:(i + 1) * square_height,
-                j * square_width:(j + 1) * square_width] = 1
+                j * square_width:(j + 1) * square_width] = True
 
     return mask
 
