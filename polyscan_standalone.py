@@ -26,7 +26,7 @@ def img_proc(img):
     for y, x in zip(*crystals):
         i = cells[y, x]
         if i > 0:
-            img[sam == i] = 1
+            img[cells == i] = 1
     if checkerboard:
         g = generate_checkerboard_mask(img.shape, nrow, ncol)
         img &= g

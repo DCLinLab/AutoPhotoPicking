@@ -25,5 +25,5 @@ def detect_crystal(img, block_size=11, tolerance=10):
 
 
 def sam(img):
-    mask, _, _ = segment_cellular_image(img, fast=True, device='gpu')
+    mask, _, _ = segment_cellular_image(img, fast=True, device='cuda', normalize=True)
     return mask

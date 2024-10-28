@@ -33,7 +33,7 @@ Turn on the server, port 2222.
 #### Install packages
 
 ```bash
-pip install matplotlib scikit-image findmaxima2d cython
+pip install matplotlib scikit-image cython findmaxima2d
 python setup.py build_ext --inplace
 ```
 
