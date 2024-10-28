@@ -5,7 +5,7 @@ import numpy as np
 import time
 import yaml
 from skimage.data import checkerboard
-from skimage.filters import difference_of_gaussians, threshold_otsu
+from utils.cell_segment import *
 from skimage.io import imread, imsave
 from pathlib import Path
 import warnings
@@ -19,8 +19,8 @@ import matplotlib.pyplot as plt
 
 
 def img_proc(img):
-    img = difference_of_gaussians(img, sigma1, sigma2)
-    img = img > threshold_otsu(img)
+    # img = simple(img, sigma1, sigma2)
+    img = sam(img)
     if checkerboard:
         g = generate_checkerboard_mask(img.shape, nrow, ncol)
         img &= g

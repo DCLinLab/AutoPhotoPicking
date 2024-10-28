@@ -3,6 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/supporting-PolyScan4-green)
 ![Static Badge](https://img.shields.io/badge/supporting-Zen_Blue_3.5-green)
 ![Static Badge](https://img.shields.io/badge/supported_by-CellSAM-blue)
+![Static Badge](https://img.shields.io/badge/Python-3.10-blue)
 
 ## Setup
 
@@ -29,6 +30,12 @@ Turn on the server, port 2222.
 ![polygon](docs/polygon.png)
 
 ### Python segmentation server
+
+#### Install packages
+
+```bash
+pip install matplotlib scikit-image
+```
 
 #### Install CellSAM
 
