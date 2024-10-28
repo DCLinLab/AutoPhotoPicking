@@ -19,8 +19,14 @@ import matplotlib.pyplot as plt
 
 
 def img_proc(img):
-    # img = simple(img, sigma1, sigma2)
-    img = sam(img)
+    # cells = simple(img, sigma1, sigma2)
+    cells = sam(img)
+    crystals = detect_crystal(img, block_size, tolerance)
+    img = np.zeros_like(img, dtype=np.uint8)
+    for y, x in zip(*crystals):
+        i = cells[y, x]
+        if i > 0:
+            img[sam == i] = 1
     if checkerboard:
         g = generate_checkerboard_mask(img.shape, nrow, ncol)
         img &= g
@@ -73,8 +79,10 @@ if __name__ == '__main__':
         config = yaml.safe_load(f)
     scan_interval = config['scan']['interval']
     tdir = Path(config['scan']['dir'])
-    sigma1 = config['img_proc']['sigma1']
-    sigma2 = config['img_proc']['sigma2']
+    # sigma1 = config['img_proc']['sigma1']
+    # sigma2 = config['img_proc']['sigma2']
+    block_size = config['img_proc']['block_size']
+    tolerance = config['img_proc']['tolerance']
     key = config['scan']['keyword']
     trigger = config['tcpip']['trigger_name']
     host = config['tcpip']['host']

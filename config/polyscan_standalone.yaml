@@ -8,8 +8,10 @@ img_proc:
   checkerboard: False
   checkerboard_row: 10
   checkerboard_col: 10
-  sigma1: 3
-  sigma2: 31
+#  sigma1: 3
+#  sigma2: 31
+  block_size: 11
+  tolerance: 10
   save_dir: F:\masks
 
 tcpip:

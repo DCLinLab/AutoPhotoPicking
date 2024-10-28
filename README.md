@@ -24,7 +24,6 @@ The setup of PolyScan comes first. **The termination of the program should begin
 
 ![laser](docs/laser.png)
 
-
 #### Polygon server
 Turn on the server, port 2222.
 ![polygon](docs/polygon.png)
@@ -34,7 +33,8 @@ Turn on the server, port 2222.
 #### Install packages
 
 ```bash
-pip install matplotlib scikit-image
+pip install matplotlib scikit-image findmaxima2d cython
+python setup.py build_ext --inplace
 ```
 
 #### Install CellSAM
