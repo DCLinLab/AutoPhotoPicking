@@ -22,11 +22,11 @@ def img_proc(img):
     # cells = simple(img, sigma1, sigma2)
     cells = sam(img)
     crystals = detect_crystal(img, block_size, tolerance)
-    img = np.zeros_like(img, dtype=np.uint8)
+    img = np.zeros_like(img, dtype=bool)
     for y, x in zip(*crystals):
         i = cells[y, x]
         if i > 0:
-            img[cells == i] = 1
+            img[cells == i] = True
     if checkerboard:
         g = generate_checkerboard_mask(img.shape, nrow, ncol)
         img &= g
