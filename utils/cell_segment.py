@@ -16,9 +16,6 @@ from cellSAM.utils import (
 import torch
 
 
-__all__ = ['simple', 'sam', 'detect_crystal']
-
-
 def simple(img, sigma1, sigma2):
     img = difference_of_gaussians(img, sigma1, sigma2)
     img = img > threshold_otsu(img)

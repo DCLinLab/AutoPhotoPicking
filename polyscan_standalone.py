@@ -5,7 +5,7 @@ import numpy as np
 import time
 import yaml
 from skimage.data import checkerboard
-from utils.cell_segment import *
+from utils.cell_segment import sam2, detect_crystal
 from skimage.io import imread, imsave
 from pathlib import Path
 import warnings
@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 def img_proc(img):
     # cells = simple(img, sigma1, sigma2)
     crystals = detect_crystal(img, block_size, tolerance)
-    cells = sam(img, crystals)
+    cells = sam2(img, crystals)
     img = np.zeros_like(img, dtype=bool)
     for y, x in zip(*crystals):
         i = cells[y, x]
