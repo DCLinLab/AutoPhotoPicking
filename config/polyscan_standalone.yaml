@@ -12,6 +12,7 @@ img_proc:
 #  sigma2: 31
   block_size: 11
   tolerance: 100
+  wrad: 30
   save_dir: F:\masks
 
 tcpip:

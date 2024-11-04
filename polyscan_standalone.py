@@ -20,8 +20,8 @@ import matplotlib.pyplot as plt
 
 def img_proc(img):
     # cells = simple(img, sigma1, sigma2)
-    cells = sam(img)
     crystals = detect_crystal(img, block_size, tolerance)
+    cells = sam(img, crystals)
     img = np.zeros_like(img, dtype=bool)
     for y, x in zip(*crystals):
         i = cells[y, x]
@@ -83,6 +83,7 @@ if __name__ == '__main__':
     # sigma2 = config['img_proc']['sigma2']
     block_size = config['img_proc']['block_size']
     tolerance = config['img_proc']['tolerance']
+    wrad = config['img_proc']['wrad']
     key = config['scan']['keyword']
     trigger = config['tcpip']['trigger_name']
     host = config['tcpip']['host']
