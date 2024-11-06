@@ -5,23 +5,42 @@ import numpy as np
 import time
 import yaml
 from skimage.data import checkerboard
-from utils.cell_segment import sam2, detect_crystal
+from img_proc.cell_segment import sam2, detect_crystal
 from skimage.io import imread, imsave
 from pathlib import Path
 import warnings
 from traceback import print_exc
 from datetime import datetime
-
 from skimage.util import img_as_ubyte
-
-from utils.checkerboard_pattern import generate_checkerboard_mask
+from img_proc.checkerboard_pattern import generate_checkerboard_mask
 import matplotlib.pyplot as plt
+import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
+
+
+def with_timeout(func, args=(), kwargs=None, timeout=5):
+    if kwargs is None:
+        kwargs = {}
+
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(func, *args, **kwargs)
+        try:
+            result = future.result(timeout=timeout)
+        except TimeoutError:
+            result = None
+
+    return result
 
 
 def img_proc(img):
     # cells = simple(img, sigma1, sigma2)
+    t1 = time.time()
     crystals = detect_crystal(img, block_size, tolerance)
-    cells = sam2(img, crystals)
+    t2 = time.time()
+    print(f'detection time: {t2 - t1}s')
+    cells = sam2(img, crystals, downscale)
+    t3 = time.time()
+    print(f'segmentation time: {t3 - t2}s')
     img = np.zeros_like(img, dtype=bool)
     for y, x in zip(*crystals):
         i = cells[y, x]
@@ -68,7 +87,7 @@ def connect(host, port, port_trigger):
     # connect to server
     s_trigger = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s_trigger.connect((remote_ip, port_trigger))
-    print("Trigger connected to server")
+    # print("Trigger connected to server")
     return s, s_trigger
 
 
@@ -79,11 +98,13 @@ if __name__ == '__main__':
         config = yaml.safe_load(f)
     scan_interval = config['scan']['interval']
     tdir = Path(config['scan']['dir'])
+    timeout = config['scan']['timeout']
     # sigma1 = config['img_proc']['sigma1']
     # sigma2 = config['img_proc']['sigma2']
     block_size = config['img_proc']['block_size']
     tolerance = config['img_proc']['tolerance']
     wrad = config['img_proc']['wrad']
+    downscale = config['img_proc']['downscale']
     key = config['scan']['keyword']
     trigger = config['tcpip']['trigger_name']
     host = config['tcpip']['host']
@@ -111,7 +132,10 @@ if __name__ == '__main__':
                 print('Detected new image {}'.format(file))
 
                 img = imread(file)
-                img = img_proc(img)
+                img = with_timeout(img_proc, args=(img,), timeout=timeout)
+                if img is None:
+                    print('timeout, skipping..')
+                    continue
                 pat = Convert(img)
 
                 func = np.uint32(2)

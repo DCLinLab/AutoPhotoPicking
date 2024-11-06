@@ -1,4 +1,4 @@
-from utils.cell_segment import *
+from img_proc.cell_segment import *
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread

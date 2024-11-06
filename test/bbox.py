@@ -1,4 +1,4 @@
-from utils.cell_segment import *
+from img_proc.cell_segment import *
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
@@ -13,7 +13,7 @@ from rtree import index
 from skimage.transform import resize, downscale_local_mean
 
 
-def sam2(img_in, crystals, scale_factor=2):
+def sam2(img_in, crystals, scale_factor=4):
     model = get_model(None).eval()
     model.bbox_threshold = 0.4
     img_in = downscale_local_mean(img_in, scale_factor)
@@ -27,7 +27,7 @@ def sam2(img_in, crystals, scale_factor=2):
     t1 = time.time()
     boxes_per_heatmap = model.generate_bounding_boxes(img, device='cuda')
     t2 = time.time()
-    print(t2-t1)
+    print(f'bbox: {t2-t1}s')
     # filter the boxes
     idx = index.Index()
 
@@ -73,10 +73,10 @@ def img_proc(img):
     t1 = time.time()
     crystals = detect_crystal(img, 11, 100)
     t2 = time.time()
-    print(t2 - t1)
+    print(f'detect: {t2 - t1}s')
     cells = sam2(img, crystals)
     t3 = time.time()
-    print(t3 - t2)
+    print(f'segment: {t3 - t2}s')
     img = np.zeros_like(img, dtype=np.uint8)
     for y, x in zip(*crystals):
         i = cells[y, x]
@@ -85,7 +85,8 @@ def img_proc(img):
     return img
 
 if __name__ == '__main__':
-    img1 = imread(r'F:\temp\2024-10-31\new\new_S0000(TR1)_C01(EGFP)_M0001_ORG.jpg')
+    # img1 = imread(r'F:\temp\2024-10-31\new\new_S0000(TR1)_C01(EGFP)_M0001_ORG.jpg')
+    img1 = imread(r'F:\temp\2024-11-05\new-02\new_S0000(TR1)_C01(EGFP)_M0003_ORG.jpg')
     # img1 = imread(r'F:\temp\2024-10-27\new-08\new_S0000(TR1)_C01(EGFP)_M0019_ORG.jpg')
     fig, ax = plt.subplots(1, 2, dpi=300)
     ax[0].imshow(img1, cmap='gray')
