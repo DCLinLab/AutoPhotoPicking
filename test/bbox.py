@@ -86,7 +86,7 @@ def img_proc(img):
 
 if __name__ == '__main__':
     # img1 = imread(r'F:\temp\2024-10-31\new\new_S0000(TR1)_C01(EGFP)_M0001_ORG.jpg')
-    img1 = imread(r'F:\temp\2024-11-05\new-02\new_S0000(TR1)_C01(EGFP)_M0003_ORG.jpg')
+    img1 = imread(r'new_S0000(TR1)_C01(EGFP)_M0003_ORG.jpg')
     # img1 = imread(r'F:\temp\2024-10-27\new-08\new_S0000(TR1)_C01(EGFP)_M0019_ORG.jpg')
     fig, ax = plt.subplots(1, 2, dpi=300)
     ax[0].imshow(img1, cmap='gray')
