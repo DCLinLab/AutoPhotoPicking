@@ -1,0 +1,1422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MTB2004Export Version="3.2.11.0">
+  <MTBConfiguration Name="3869002785 new" MyChildId="0">
+    <Devices>
+      <Device Class="MTBCtrlDeviceAquila,MTBKernelAquila" Name="AquilaZ.Stand" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="25" MyChildId="1">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAquila</SimulationClass>
+        <TechReport>ReportAquila</TechReport>
+        <WriteConfig>WriteConfigAquila</WriteConfig>
+        <LightPath>AxioObserver</LightPath>
+        <Components>
+          <Component Active="false" Class="Dummy,MTBKernel" Name="MTBLaserModuleShutterDummy" MTBId="MTBLaserModuleShutter" CANId="0x00" />
+          <Component Class="MTBCtrlObject,MTBKernel" Name="Object" MTBId="MTBObject" CANId="0x00" />
+          <Component Class="MTBCtrlRLTLSwitchAquila,MTBKernelAquila" Name="Aquila.RLTLSwitch" MTBId="MTBRLTLSwitch" CANId="0x1F">
+            <NumberOfPositions>2</NumberOfPositions>
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.01</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlRLTLSwitchState,MTBKernel" Name="RLTLSwitch.TL" Position="0">
+                <State>TransmittedLight</State>
+              </Element>
+              <Element Class="MTBCtrlRLTLSwitchState,MTBKernel" Name="RLTLSwitch.RL" Position="1">
+                <State>ReflectedLight</State>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Class="MTBCtrlMicroscopeManagerAquila,MTBKernelAquila" Name="Aquila.MicroscopeManager" MTBId="MTBMicroscopeManager" CANId="0x00">
+            <LightManagerModes>Objective, Classic</LightManagerModes>
+          </Component>
+          <Component Class="MTBCtrlObjectiveChangerAquila,MTBKernelAquila" Name="Aquila.Nosepiece_6xmot" MTBId="MTBObjectiveChanger" CANId="0x02" MyChildId="13001">
+            <NumberOfPositions>6</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <WriteConfig>WriteConfigAquilaNosepiece</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.4</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+            <HasOilStop>true</HasOilStop>
+            <ChangerElements>
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="Objective.420330-9901-000" DisplayName="EC Plan-Neofluar 5x/0.16 M27" MyChildId="100" Position="0">
+                <Magnification>5</Magnification>
+                <Aperture>0.16</Aperture>
+                <Immersion>Air,</Immersion>
+                <Contrast>BrightField,DarkField,RLBrightField,RLPol,TLPol,DIC0,</Contrast>
+                <Features>Pol,</Features>
+                <WorkingDistance>13600</WorkingDistance>
+                <OrderNo>420330-9901-000</OrderNo>
+                <ACRModuleType>1</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <Category>EC PlnN</Category>
+                <LongName>EC Plan-Neofluar 5x/0.16 M27</LongName>
+                <CoverSlipMin>0.17</CoverSlipMin>
+                <CoverSlipMax />
+                <TransmLow>365</TransmLow>
+                <TransmHigh>2000</TransmHigh>
+                <TLDICPrism>00</TLDICPrism>
+              </Element>
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="Objective.420340-9901-000" DisplayName="EC Plan-Neofluar 10x/0.30 M27" MyChildId="101" Position="1">
+                <Magnification>10</Magnification>
+                <Aperture>0.30</Aperture>
+                <Immersion>Air,</Immersion>
+                <Contrast>BrightField,DarkField,RLBrightField,RLPol,TLPol,DIC1,</Contrast>
+                <Features>Pol,</Features>
+                <WorkingDistance>5300</WorkingDistance>
+                <OrderNo>420340-9901-000</OrderNo>
+                <ACRModuleType>1</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <Category>EC PlnN</Category>
+                <LongName>EC Plan-Neofluar 10x/0.30 M27</LongName>
+                <CoverSlipMin>0.17</CoverSlipMin>
+                <CoverSlipMax />
+                <TransmLow>347</TransmLow>
+                <TransmHigh>1200</TransmHigh>
+                <TLDICPrism>00</TLDICPrism>
+              </Element>
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="Objective.420650-9903-000" DisplayName="Plan-Apochromat 20x/0.8 M27" MyChildId="102" Position="2">
+                <Magnification>20</Magnification>
+                <Aperture>0.80</Aperture>
+                <Immersion>Air,</Immersion>
+                <Contrast>BrightField,DarkField,RLBrightField,RLPol,TLPol,DIC2,</Contrast>
+                <Features>Pol,</Features>
+                <WorkingDistance>610</WorkingDistance>
+                <OrderNo>420650-9903-000</OrderNo>
+                <ACRModuleType>1</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <Category>Pln Apo</Category>
+                <LongName>Plan-Apochromat 20x/0.8 M27</LongName>
+                <CoverSlipMin>0.17</CoverSlipMin>
+                <CoverSlipMax />
+                <TransmLow>373</TransmLow>
+                <TransmHigh>1036</TransmHigh>
+                <TLDICPrism>00</TLDICPrism>
+              </Element>
+              <Element Class="MTBCtrlChangerElement,MTBKernel" Name="Objective.none" MyChildId="103" Position="3" />
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="Objective.440760-9905-000" DisplayName="Plan-Apochromat 63x/1.40 Oil" MyChildId="104" Position="4">
+                <Magnification>63</Magnification>
+                <Aperture>1.4</Aperture>
+                <Immersion>Oil,</Immersion>
+                <Contrast>BrightField,DarkField,RLBrightField,RLPol,TLPol,DIC2,</Contrast>
+                <Features>Pol,TIRF,</Features>
+                <WorkingDistance>193</WorkingDistance>
+                <OrderNo>440760-9905-000</OrderNo>
+                <ACRModuleType>1</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>0</ACRChip>
+                <Category>Pln Apo</Category>
+                <LongName>Plan-Apochromat 63x/1.40 Oil</LongName>
+                <CoverSlipMin>0.17</CoverSlipMin>
+                <CoverSlipMax />
+                <TransmLow />
+                <TransmHigh />
+                <TIRFCorrection>1.0</TIRFCorrection>
+              </Element>
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="Objective.420640-9900-000" DisplayName="Plan-Apochromat 10x/0.45 M27" MyChildId="105" Position="5">
+                <Magnification>10</Magnification>
+                <Aperture>0.45</Aperture>
+                <Immersion>Air,</Immersion>
+                <Contrast>BrightField,DarkField,RLBrightField,RLPol,TLPol,DIC2,</Contrast>
+                <Features>Pol,</Features>
+                <WorkingDistance>2100</WorkingDistance>
+                <OrderNo>420640-9900-000</OrderNo>
+                <ACRModuleType>1</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <Category>Pln Apo</Category>
+                <LongName>Plan-Apochromat 10x/0.45 M27</LongName>
+                <CoverSlipMin>0.17</CoverSlipMin>
+                <CoverSlipMax />
+                <TransmLow />
+                <TransmHigh />
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Class="MTBCtrlReflectorChangerAquila,MTBKernelAquila" Name="Aquila.ReflectorChanger_6xmot" MTBId="MTBReflectorChanger" CANId="0x01" MyChildId="13002">
+            <NumberOfPositions>6</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <WriteConfig>WriteConfigAquilaReflectorTurret</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.3</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>5000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="Reflector.424932-9901-000" DisplayName="Analy. DIC Trans.light" MyChildId="13120" Position="0">
+                <Usage>TL_Dic</Usage>
+                <Contrast>DIC0,DIC1,DIC2,DIC3</Contrast>
+                <OrderNo>424932-9901-000</OrderNo>
+                <ACRModuleType>3</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>2</ACRChip>
+                <ShortName1>DIC</ShortName1>
+                <ShortName2>TL</ShortName2>
+                <LongName>Analy. DIC Trans.light</LongName>
+                <TransmLow>420</TransmLow>
+                <TransmHigh>680</TransmHigh>
+                <XShift>-128</XShift>
+                <YShift>-128</YShift>
+              </Element>
+              <Element Class="MTBCtrlReflector,MTBKernel" Name="Reflector.489090-9110-000" DisplayName="90 HE DAPI/ GFP/ Cy3/ Cy5" MyChildId="13121" Position="1">
+                <Usage>RL_Fluor</Usage>
+                <Area>
+                  <ExcitationLow>375</ExcitationLow>
+                  <ExcitationHigh>395</ExcitationHigh>
+                  <Beamsplitter>405</Beamsplitter>
+                  <EmissionLow>410</EmissionLow>
+                  <EmissionHigh>440</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>455</ExcitationLow>
+                  <ExcitationHigh>483</ExcitationHigh>
+                  <Beamsplitter>493</Beamsplitter>
+                  <EmissionLow>499</EmissionLow>
+                  <EmissionHigh>529</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>545</ExcitationLow>
+                  <ExcitationHigh>565</ExcitationHigh>
+                  <Beamsplitter>575</Beamsplitter>
+                  <EmissionLow>579</EmissionLow>
+                  <EmissionHigh>604</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>620</ExcitationLow>
+                  <ExcitationHigh>643</ExcitationHigh>
+                  <Beamsplitter>653</Beamsplitter>
+                  <EmissionLow>659</EmissionLow>
+                  <EmissionHigh>759</EmissionHigh>
+                </Area>
+                <Features>1</Features>
+                <OrderNo>489090-9110-000</OrderNo>
+                <ACRModuleType>2</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <ShortName1>90</ShortName1>
+                <ShortName2>D/G/C3/C5</ShortName2>
+                <LongName>DAPI / GFP/ Cy3 / Cy5</LongName>
+                <ShortNames>DAPI;BFP;A350;Cy5;A610;A633;RFP;dsRED;Cy3;A546;A555;Rhod;GFP;Cy2;A488;FITC</ShortNames>
+                <LongNames>DAPI;BFP;Alexa 350;Cy5;Alexa 610;Alexa 633;RFP;dsRED;Cy3;Alexa 546;Alexa 555;Rhodamine;GFP;Cy2;Alexa 488;FITC</LongNames>
+              </Element>
+              <Element Class="MTBCtrlReflector,MTBKernel" Name="Reflector.489110-9111-000" DisplayName="110 HE DAPI/GFP/Cy3.5/Cy7" MyChildId="13122" Position="2">
+                <Usage>RL_Fluor</Usage>
+                <Area>
+                  <ExcitationLow>375</ExcitationLow>
+                  <ExcitationHigh>395</ExcitationHigh>
+                  <Beamsplitter>405</Beamsplitter>
+                  <EmissionLow>410</EmissionLow>
+                  <EmissionHigh>440</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>455</ExcitationLow>
+                  <ExcitationHigh>483</ExcitationHigh>
+                  <Beamsplitter>493</Beamsplitter>
+                  <EmissionLow>501</EmissionLow>
+                  <EmissionHigh>547</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>583</ExcitationLow>
+                  <ExcitationHigh>600</ExcitationHigh>
+                  <Beamsplitter>611</Beamsplitter>
+                  <EmissionLow>618</EmissionLow>
+                  <EmissionHigh>650</EmissionHigh>
+                </Area>
+                <Area>
+                  <ExcitationLow>720</ExcitationLow>
+                  <ExcitationHigh>750</ExcitationHigh>
+                  <Beamsplitter>762</Beamsplitter>
+                  <EmissionLow>770</EmissionLow>
+                  <EmissionHigh>800</EmissionHigh>
+                </Area>
+                <Features>1</Features>
+                <OrderNo>489110-9111-000</OrderNo>
+                <ACRModuleType>2</ACRModuleType>
+                <ACRVersion>1</ACRVersion>
+                <ACRChip>1</ACRChip>
+                <ShortName1>110</ShortName1>
+                <ShortName2>D/G/C3.5/C7</ShortName2>
+                <LongName>DAPI/GFP/Cy3.5/Cy7</LongName>
+                <ShortNames>DAPI;BFP;GFP;Alexa 488;FITC;Cy3.5;Texas Red;Cy7;Alexa 750</ShortNames>
+                <LongNames>DAPI;BFP;GFP;Alexa 488;FITC;Cy3.5;Texas Red;Cy7;Alexa 750</LongNames>
+              </Element>
+              <Element Class="MTBCtrlChangerElement,MTBKernel" Name="Reflector.none" DisplayName="none" DisplayName-de="Kein" MyChildId="13123" Position="3">
+                <Usage>TL_NoDic</Usage>
+              </Element>
+              <Element Class="MTBCtrlChangerElement,MTBKernel" Name="Reflector.none" DisplayName="none" DisplayName-de="Kein" MyChildId="13124" Position="4">
+                <Usage>TL_NoDic</Usage>
+              </Element>
+              <Element Class="MTBCtrlChangerElement,MTBKernel" Name="Reflector.none" DisplayName="none" DisplayName-de="Kein" MyChildId="13125" Position="5">
+                <Usage>TL_NoDic</Usage>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Active="false" Name="Aquila.VirtualReflectorChanger_none" DisplayName="No vReflector Changer" DisplayName-de="Kein vReflector Wechsler" MTBId="MTBNone" CANId="0x01" MyChildId="13014" />
+          <Component Active="false" Name="Aquila.PALM3DSlider_none" DisplayName="No 3D-PALM Slider" DisplayName-de="Kein 3D-PALM Schieber" MTBId="MTBNone" CANId="0x00" MyChildId="13017" />
+          <Component Class="MTBCtrlFocusAquila,MTBKernelAquila" Name="Aquila.Focus_mot" MTBId="MTBFocus" CANId="0x0F" MyChildId="13003">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxAxis</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.01</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="-14000000" Max="14000000" MaxDeviation="0" TypDeviation="0" StepWidth="10" />
+              <ScaledRange Unit="µm" Min="-14000" Max="14000" />
+            </PositionScales>
+            <PositionSpeedScales>
+              <ADRange Min="62" Max="6000000" />
+              <ScaledRange Unit="µm/s" Min="0.062" Max="6000.0" />
+              <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+            </PositionSpeedScales>
+            <PositionAccelerationScales>
+              <ADRange Min="1" Max="10000000" />
+              <ScaledRange Unit="µm/s²" Min="0" Max="10000" />
+              <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+            </PositionAccelerationScales>
+            <SpeedScales>
+              <ADRange Min="62" Max="6000000" />
+              <ScaledRange Unit="µm/s" Min="0.062" Max="6000" />
+            </SpeedScales>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+            <TriggerModes>TriggerOff, TriggerIn, TriggerOutOnListPosition, TriggerOutOnStep</TriggerModes>
+          </Component>
+          <Component Active="false" Name="Aquila.TubelensChanger_none" MTBId="MTBNone" CANId="0x03" MyChildId="13004" />
+          <Component Active="false" Name="Aquila.BaseportChanger_none" MTBId="MTBNone" CANId="0x03" MyChildId="13005" />
+          <Component Class="MTBCtrlSideportChangerAquila,MTBKernelAquila" Name="Aquila.SideportChanger_3xmot" MTBId="MTBSideportChanger" CANId="0x14" MyChildId="13006">
+            <NumberOfPositions>3</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <WriteConfig>WriteConfigAquilaSideportTurret</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.1</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlMirror,MTBKernel" Name="Aquila.SideportElement_100%BP" MyChildId="13130" Position="0">
+                <Successor>MTBBaseportChanger</Successor>
+              </Element>
+              <Element Class="MTBCtrlBeamSplitter,MTBKernel" Name="Aquila.SideportElement_50%BP_50%L" MyChildId="13131" Position="1">
+                <Successor1>MTBBaseportChanger</Successor1>
+                <Successor2>MTBSideportLeft</Successor2>
+                <SplittingRatioSuccessor1>0.5</SplittingRatioSuccessor1>
+              </Element>
+              <Element Class="MTBCtrlMirror,MTBKernel" Name="Aquila.SideportElement_100%L" MyChildId="13132" Position="2">
+                <Successor>MTBSideportLeft</Successor>
+              </Element>
+            </ChangerElements>
+            <Slave ChildId="13133">CameraAdapter.1xCSU</Slave>
+            <Slave ChildId="13134">CameraAdapter.none</Slave>
+          </Component>
+          <Component Class="MTBCtrlCameraAdapter,MTBKernel" Name="CameraAdapter.1xCSU" MTBId="MTBCameraAdapter_MTBSideportChanger_Left" CANId="0x00" MyChildId="13133">
+            <Magnification>1</Magnification>
+            <LightPathLocation>MTBSideportChanger,Left</LightPathLocation>
+            <Slave ChildId="-2">Axiocam NG Generic</Slave>
+          </Component>
+          <Component Class="MTBCtrlCameraInfo,MTBKernel" Name="Axiocam NG Generic" DisplayName="Axiocam 305/512/7xx" MTBId="MTBCamera_MTBCameraAdapter_MTBSideportChanger_Left" CANId="0x00" MyChildId="-2">
+            <CameraId>AxioCamNGGeneric</CameraId>
+            <DisplayName>
+            </DisplayName>
+            <Trigger>none</Trigger>
+          </Component>
+          <Component Active="false" Name="CameraAdapter.none" MTBId="MTBCameraAdapter" CANId="0x00" MyChildId="13134" />
+          <Component Active="false" Name="AquilaZ.ReflectedLight" MTBId="MTBRLLampPort" CANId="0x00" MyChildId="13007">
+            <Slave ChildId="13160" OwnPropDevice="true">Albireo.Base</Slave>
+            <Slave ChildId="13162">Aquila.RL_Shutter_mot</Slave>
+            <Slave ChildId="13164">Aquila.RL_ExtFilterWheel_none</Slave>
+            <Slave ChildId="13161">Aquila.RL_Fieldstop_none</Slave>
+            <Slave ChildId="13165" OwnPropDevice="true">ApoTome.none</Slave>
+            <Slave ChildId="13166">Aquila.RL_Aperture_none</Slave>
+          </Component>
+          <Component Class="MTBCtrlRLShutterAquila,MTBKernelAquila" Name="Aquila.RL_Shutter_mot" MTBId="MTBRLShutter" CANId="0x1D" MyChildId="13162">
+            <LightPathLocation>internal</LightPathLocation>
+            <NumberOfPositions>2</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.01</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlShutterState,MTBKernel" Name="Shutter.Closed" Position="0">
+                <Open>false</Open>
+              </Element>
+              <Element Class="MTBCtrlShutterState,MTBKernel" Name="Shutter.Open" Position="1">
+                <Open>true</Open>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Active="false" Name="Aquila.RL_ExtFilterWheel_none" MTBId="MTBNone" CANId="0x00" MyChildId="13164" />
+          <Component Active="false" Name="Aquila.RL_Fieldstop_none" MTBId="MTBNone" CANId="0x00" MyChildId="13161" />
+          <Component Active="false" Name="Aquila.RL_Aperture_none" MTBId="MTBNone" CANId="0x09" MyChildId="13166" />
+          <Component Active="false" Name="AquilaZ.TransmittedLight" MTBId="MTBTLLampPort" CANId="0x00" MyChildId="13008">
+            <Slave ChildId="13170">Aquila.TL_LEDLamp</Slave>
+            <Slave ChildId="13171">Aquila.TL_Shutter_mot</Slave>
+            <Slave ChildId="13173">Aquila.TL_PhosphorescenceFilterChanger_none</Slave>
+            <Slave ChildId="13175">Aquila.Condenser_mot</Slave>
+          </Component>
+          <Component Class="MTBCtrlTLLEDLampAquila,MTBKernelAquila" Name="Aquila.TL_LEDLamp" MTBId="MTBTLHalogenLamp" CANId="0x29" MyChildId="13170">
+            <LightPathLocation>TransmittedLight</LightPathLocation>
+            <Motorization>2</Motorization>
+            <WriteConfig>WriteConfigAquilaLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxLamp</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1024" MaxDeviation="2" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100">
+                <Sample AD="210.0" Scaled="0" />
+              </ScaledRange>
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlTLShutterAquila,MTBKernelAquila" Name="Aquila.TL_Shutter_mot" MTBId="MTBTLShutter" CANId="0x1E" MyChildId="13171">
+            <LightPathLocation>internal</LightPathLocation>
+            <NumberOfPositions>2</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.01</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlShutterState,MTBKernel" Name="Shutter.Closed" Position="0">
+                <Open>false</Open>
+              </Element>
+              <Element Class="MTBCtrlShutterState,MTBKernel" Name="Shutter.Open" Position="1">
+                <Open>true</Open>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Active="false" Name="Aquila.TL_PhosphorescenceFilterChanger_none" DisplayName="No Glow Protection Filter Changer" DisplayName-de="Kein Glow Protection Filterwechsler" MTBId="MTBNone" CANId="0x00" MyChildId="13173" />
+          <Component Class="MTBCtrlCondenserContrastChangerAquila,MTBKernelAquila" Name="Aquila.Condenser_mot" MTBId="MTBCondenserContrastChanger" CANId="0x22" MyChildId="13175">
+            <NumberOfPositions>6</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <WriteConfig>WriteConfigAquilaCondenser</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.5</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="Contrast.BrightField" Position="0">
+                <Contrast>BrightField</Contrast>
+              </Element>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="Contrast.PH1" Position="1">
+                <Contrast>PH1</Contrast>
+              </Element>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="Contrast.PH2" Position="2">
+                <Contrast>PH2</Contrast>
+              </Element>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="Contrast.PH3" Position="3">
+                <Contrast>PH3</Contrast>
+              </Element>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="AquilaContrast.DIC1" MyChildId="13180" Position="4">
+                <Contrast>DIC1</Contrast>
+              </Element>
+              <Element Class="MTBCtrlContrast,MTBKernel" Name="AquilaContrast.DIC2" MyChildId="13181" Position="5">
+                <Contrast>DIC2</Contrast>
+              </Element>
+            </ChangerElements>
+            <Slave ChildId="0">Aquila.Condenser_Aperture_mot</Slave>
+            <Slave ChildId="0">Aquila.Condenser_Properties</Slave>
+          </Component>
+          <Component Class="MTBCtrlCondenserApertureStopAquila,MTBKernelAquila" Name="Aquila.Condenser_Aperture_mot" MTBId="MTBTLApertureStop" CANId="0x23" MyChildId="0">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxContMove</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.01</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="800" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="NA" Min="0.09" Max="0.55" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>5000</CmdSetTimeout>
+          </Component>
+          <Component Active="true" Class="MTBCtrlCondenserProperties,MTBKernel" Name="Aquila.Condenser_Properties" MTBId="MTBCondenserProperties" MyChildId="0">
+            <Simulation />
+            <OrderNo>424244-0000-000</OrderNo>
+            <MaxFieldOfViewDiameter>5</MaxFieldOfViewDiameter>
+          </Component>
+          <Component Active="false" Name="Aquila.Tube_man" MTBId="MTBTube" CANId="0x00" MyChildId="13010">
+            <Slave ChildId="13190">Eyepiece.10x_23</Slave>
+          </Component>
+          <Component Class="MTBCtrlEyepiece,MTBKernel" Name="Eyepiece.10x_23" MTBId="MTBEyePiece" CANId="0x00" MyChildId="13190">
+            <Magnification>10</Magnification>
+            <FieldOfView>23</FieldOfView>
+          </Component>
+          <Component Class="MTBCtrlStageAquila,MTBKernelAquila" Name="Stage.SMC2009_int" MTBId="MTBStage" CANId="" MyChildId="13011">
+            <Motorization>2</Motorization>
+            <XAxis Class="MTBCtrlStageAxisAquila,MTBKernelAquila" Name="XAxis" MTBId="MTBStageAxisX" CANId="0x26">
+              <Motorization>2</Motorization>
+              <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxAxis</SimulationClass>
+              <Simulation>
+                <TypMovementTime>0.01</TypMovementTime>
+              </Simulation>
+              <PositionScales>
+                <ADRange Min="-350000000" Max="350000000" MaxDeviation="0" TypDeviation="0" StepWidth="250" />
+                <ScaledRange Unit="µm" Min="-350000" Max="350000" />
+              </PositionScales>
+              <PositionSpeedScales>
+                <ADRange Min="0" Max="25000000" />
+                <ScaledRange Unit="µm/s" Min="0.0" Max="25000.0" />
+                <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+              </PositionSpeedScales>
+              <PositionAccelerationScales>
+                <ADRange Min="0" Max="500000000" />
+                <ScaledRange Unit="µm/s2" Min="0.0" Max="500000.0" />
+                <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+              </PositionAccelerationScales>
+              <SpeedScales>
+                <ADRange Min="1" Max="25000000" />
+                <ScaledRange Unit="µm/s" Min="0.001" Max="25000" />
+              </SpeedScales>
+              <InvertDirection>true</InvertDirection>
+              <LoadPosition>NegativeLimit</LoadPosition>
+              <CmdSetTimeout>60000</CmdSetTimeout>
+              <TriggerModes>TriggerOff, TriggerIn, TriggerOutOnListPosition, TriggerOutOnStep</TriggerModes>
+            </XAxis>
+            <YAxis Class="MTBCtrlStageAxisAquila,MTBKernelAquila" Name="YAxis" MTBId="MTBStageAxisY" CANId="0x27">
+              <Motorization>2</Motorization>
+              <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxAxis</SimulationClass>
+              <Simulation>
+                <TypMovementTime>0.01</TypMovementTime>
+              </Simulation>
+              <PositionScales>
+                <ADRange Min="-350000000" Max="350000000" MaxDeviation="0" TypDeviation="0" StepWidth="250" />
+                <ScaledRange Unit="µm" Min="-350000" Max="350000" />
+              </PositionScales>
+              <PositionSpeedScales>
+                <ADRange Min="0" Max="25000000" />
+                <ScaledRange Unit="µm/s" Min="0.0" Max="25000.0" />
+                <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+              </PositionSpeedScales>
+              <PositionAccelerationScales>
+                <ADRange Min="0" Max="500000000" />
+                <ScaledRange Unit="µm/s2" Min="0.0" Max="500000.0" />
+                <ScaledRange Unit="%" Min="0.0" Max="100.0" />
+              </PositionAccelerationScales>
+              <SpeedScales>
+                <ADRange Min="1" Max="25000000" />
+                <ScaledRange Unit="µm/s" Min="0.001" Max="25000" />
+              </SpeedScales>
+              <InvertDirection>true</InvertDirection>
+              <LoadPosition>NegativeLimit</LoadPosition>
+              <CmdSetTimeout>60000</CmdSetTimeout>
+              <TriggerModes>TriggerOff, TriggerIn, TriggerOutOnListPosition, TriggerOutOnStep</TriggerModes>
+            </YAxis>
+            <MonitorStatusByte>false</MonitorStatusByte>
+            <CmdSetTimeout>60000</CmdSetTimeout>
+            <SettleWaitTime>200</SettleWaitTime>
+          </Component>
+          <Component Active="false" Name="Joystick.None" DisplayName="No Joystick" DisplayName-de="Kein Joystick" MTBId="MTBJoystick" CANId="0x00" MyChildId="13022" />
+          <Component Active="false" Name="Incubation.BasePeconIbidi" MTBId="MTBNone" CANId="0x08" MyChildId="13012">
+            <Slave ChildId="14000" OwnPropDevice="true">IncubationPeCon.AtmoTemp_Base</Slave>
+          </Component>
+        </Components>
+        <Slave ChildId="13090">MTBSampleFinder.LEDArrayTL_Device</Slave>
+        <Slave ChildId="13091">MTBSampleFinder.LEDArrayFF_Device</Slave>
+        <Slave ChildId="13092">MTBSampleFinder.LEDArrayRL_Device</Slave>
+        <Slave ChildId="800">MotKorr.Objective1Control_Device</Slave>
+        <Slave ChildId="810">MotKorr.Objective2Control_Device</Slave>
+        <Slave ChildId="820">MotKorr.Objective3Control_Device</Slave>
+        <Slave ChildId="830">MotKorr.Objective4Control_Device</Slave>
+        <Slave ChildId="840">MotKorr.Objective5Control_Device</Slave>
+        <Slave ChildId="850">MotKorr.Objective6Control_Device</Slave>
+        <Slave ChildId="13019">Aquila.FocusStabilizer3</Slave>
+        <Slave ChildId="30020" OwnPropDevice="true">NoPiezofocus</Slave>
+        <Slave ChildId="9200" OwnPropDevice="true">TIRF.none</Slave>
+        <Slave ChildId="13020" OwnPropDevice="true">Safety_Device.None</Slave>
+        <Slave ChildId="13013" OwnPropDevice="true">REOEM.none</Slave>
+        <Slave ChildId="30050" OwnPropDevice="true">NoFilterWheelsShutters</Slave>
+        <Slave ChildId="30070" OwnPropDevice="true">Shutters.Uniblitz.No</Slave>
+        <Slave ChildId="25100" OwnPropDevice="true">IOCard.NoIOCard</Slave>
+      </Device>
+      <Device Active="false" Class="MTBCtrlDeviceLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayTL_Device" DisplayName="Sample Finder TL Illumination" DisplayName-de="Probenfinder DL Beleuchtung" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="89" MyChildId="13090">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceLEDArraySFTL</SimulationClass>
+        <MonitoringSleep>100,10000,5,30</MonitoringSleep>
+        <TechReport>ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayTL" DisplayName="AI Sample Finder Transmitted Light LED Array" DisplayName-de="Probenfinder Durchlicht Array" MTBId="MTBLEDArraySF_TL" CANId="0x01">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimLEDArrayCommandsSF</SimulationClass>
+            <Simulation>
+              <Wavelength>410-690</Wavelength>
+              <OrderNo>000000-0000-000</OrderNo>
+              <SerialNo>12-11_12345678_0001</SerialNo>
+              <Color>white</Color>
+              <SimRows>8</SimRows>
+              <SimColumns>16</SimColumns>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="10000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBRTCtrlCan29StandAloneADC32WithPolling,MTBRTKernelCan29" Name="MTBSampleFinder.SFTempSensor1" DisplayName="Sample Finder TL Temperature Sensor 1" DisplayName-de="Probenfinder DL Temperatursensor 1" MTBId="MTBCondenserTLTempSensor1" CANId="0x85">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBRTSimAdc32Commands,MTBRTSimulation</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="80000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="0" Max="+80" />
+            </PositionScales>
+            <MonitorStatusByte>false</MonitorStatusByte>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBRTCtrlCan29StandAloneADC32WithPolling,MTBRTKernelCan29" Name="MTBSampleFinder.SFTempSensor2" DisplayName="Sample Finder TL Temperature Sensor 2" DisplayName-de="Probenfinder DL Temperatursensor 2" MTBId="MTBCondenserTLTempSensor2" CANId="0x86">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBRTSimAdc32Commands,MTBRTSimulation</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="80000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="0" Max="+80" />
+            </PositionScales>
+            <MonitorStatusByte>false</MonitorStatusByte>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlDeviceLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayFF_Device" DisplayName="Sample Finder FF Illumination" DisplayName-de="Probenfinder FF Beleuchtung" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="90" MyChildId="13091">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceLEDArraySFFF</SimulationClass>
+        <MonitoringSleep>100,10000,5,30</MonitoringSleep>
+        <TechReport>ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayFF" DisplayName="AI Sample Finder Focus Finder LED Array" DisplayName-de="Probenfinder FF Array" MTBId="MTBLEDArraySF_FF" CANId="0x01">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimLEDArrayCommandsSF</SimulationClass>
+            <Simulation>
+              <Wavelength>410-690</Wavelength>
+              <OrderNo>000000-0000-000</OrderNo>
+              <SerialNo>12-11_12345678_0002</SerialNo>
+              <Color>white</Color>
+              <SimRows>1</SimRows>
+              <SimColumns>9</SimColumns>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="10000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBRTCtrlCan29StandAloneADC32WithPolling,MTBRTKernelCan29" Name="MTBSampleFinder.FFTempSensor" DisplayName="Sample Finder FF Temperature Sensor" DisplayName-de="Probenfinder FF Temperatursensor" MTBId="MTBCondenserFFTempSensor" CANId="0x82">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBRTSimAdc32Commands,MTBRTSimulation</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="80000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="0" Max="+80" />
+            </PositionScales>
+            <MonitorStatusByte>false</MonitorStatusByte>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlDeviceLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayRL_Device" DisplayName="Sample Finder RL Illumination" DisplayName-de="Probenfinder AL Beleuchtung" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="91" MyChildId="13092">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceLEDArraySFRL</SimulationClass>
+        <MonitoringSleep>100,10000,5,30</MonitoringSleep>
+        <TechReport>ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlLEDArraySF,MTBKernelLEDArray" Name="MTBSampleFinder.LEDArrayRL" DisplayName="AI Sample Finder Reflected Light LED Array" DisplayName-de="Probenfinder Auflicht Array" MTBId="MTBLEDArraySF_RL" CANId="0x01">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimLEDArrayCommandsSF</SimulationClass>
+            <Simulation>
+              <Wavelength>410-690</Wavelength>
+              <OrderNo>000000-0000-000</OrderNo>
+              <SerialNo>12-11_12345678_0003</SerialNo>
+              <Color>white</Color>
+              <SimRows>1</SimRows>
+              <SimColumns>12</SimColumns>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="10000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBRTCtrlCan29StandAloneADC32WithPolling,MTBRTKernelCan29" Name="TestAquilaTemperature.ObjectiveTempSensor" DisplayName="Temperature Sensor " DisplayName-de="Temperatursensor " MTBId="MTBCondenserRLTempSensor" CANId="0x83" MyChildId="80524">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBRTSimAdc32Commands,MTBRTSimulation</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="80000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="0" Max="+80" />
+            </PositionScales>
+            <MonitorStatusByte>false</MonitorStatusByte>
+            <CmdSetTimeout>30000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective1Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="59" MyChildId="800">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective1</SimulationClass>
+        <TechReport Servos="10;Obj1 Correction1/60;Obj1 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective1.Correction1" DisplayName="Motorized Correction for Objective 1" DisplayName-de="Motorisierte Korrektur für Objektiv 1" MTBId="MTBObjective1Correction1" CANId="0x10" MyChildId="801">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective1.Correction2" DisplayName="Motorized Correction 2 for Objective 1" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 1" MTBId="MTBObjective1Correction2" CANId="0x20" MyChildId="802">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective1.Zoom" DisplayName="Motorized Zoom for Objective 1" DisplayName-de="Motorisiertes Zoom für Objektiv 1" MTBId="MTBObjective1Zoom" CANId="0x99" MyChildId="803">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="1" Max="4" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective1TempSensor" DisplayName="Temperature Sensor Objective 1" DisplayName-de="Temperatursensor Objektiv 1" MTBId="MTBObjective1TempSensor" CANId="0x60" MyChildId="805">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective1CorrController" DisplayName="Correction Controller for Objective 1" DisplayName-de="Korrektur-Controller für Objektiv 1" MTBId="MTBObjective1CorrController" CANId="0x00" MyChildId="807">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective2Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="60" MyChildId="810">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective2</SimulationClass>
+        <TechReport Servos="10;Obj2 Correction1/60;Obj2 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective2.Correction1" DisplayName="Motorized Correction for Objective 2" DisplayName-de="Motorisierte Korrektur für Objektiv 2" MTBId="MTBObjective2Correction1" CANId="0x10" MyChildId="811">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective2.Correction2" DisplayName="Motorized Correction 2 for Objective 2" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 2" MTBId="MTBObjective2Correction2" CANId="0x20" MyChildId="812">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective2.Zoom" DisplayName="Motorized Zoom for Objective 2" DisplayName-de="Motorisiertes Zoom für Objektiv 2" MTBId="MTBObjective2Zoom" CANId="0x99" MyChildId="813">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="1" Max="4" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective2TempSensor" DisplayName="Temperature Sensor Objective 2" DisplayName-de="Temperatursensor Objektiv 2" MTBId="MTBObjective2TempSensor" CANId="0x60" MyChildId="815">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective2CorrController" DisplayName="Correction Controller for Objective 2" DisplayName-de="Korrektur-Controller für Objektiv 2" MTBId="MTBObjective2CorrController" CANId="0x00" MyChildId="817">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective3Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="61" MyChildId="820">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective3</SimulationClass>
+        <TechReport Servos="10;Obj3 Correction1/60;Obj3 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective3.Correction1" DisplayName="Motorized Correction for Objective 3" DisplayName-de="Motorisierte Korrektur für Objektiv 3" MTBId="MTBObjective3Correction1" CANId="0x10" MyChildId="821">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective3.Correction2" DisplayName="Motorized Correction 2 for Objective 3" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 3" MTBId="MTBObjective3Correction2" CANId="0x20" MyChildId="822">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective3.Zoom" DisplayName="Motorized Zoom for Objective 3" DisplayName-de="Motorisiertes Zoom für Objektiv 3" MTBId="MTBObjective3Zoom" CANId="0x99" MyChildId="823">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="1" Max="4" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective3TempSensor" DisplayName="Temperature Sensor Objective 3" DisplayName-de="Temperatursensor Objektiv 3" MTBId="MTBObjective3TempSensor" CANId="0x60" MyChildId="825">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective3CorrController" DisplayName="Correction Controller for Objective 3" DisplayName-de="Korrektur-Controller für Objektiv 3" MTBId="MTBObjective3CorrController" CANId="0x00" MyChildId="827">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective4Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="62" MyChildId="830">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective4</SimulationClass>
+        <TechReport Servos="10;Obj4 Correction1/60;Obj4 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective4.Correction1" DisplayName="Motorized Correction for Objective 4" DisplayName-de="Motorisierte Korrektur für Objektiv 4" MTBId="MTBObjective4Correction1" CANId="0x10" MyChildId="831">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective4.Correction2" DisplayName="Motorized Correction 2 for Objective 4" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 4" MTBId="MTBObjective4Correction2" CANId="0x20" MyChildId="832">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective4.Zoom" DisplayName="Motorized Zoom for Objective 4" DisplayName-de="Motorisiertes Zoom für Objektiv 4" MTBId="MTBObjective4Zoom" CANId="0x99" MyChildId="833">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="1" Max="4" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective4TempSensor" DisplayName="Temperature Sensor Objective 4" DisplayName-de="Temperatursensor Objektiv 4" MTBId="MTBObjective4TempSensor" CANId="0x60" MyChildId="835">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective4CorrController" DisplayName="Correction Controller for Objective 4" DisplayName-de="Korrektur-Controller für Objektiv 4" MTBId="MTBObjective4CorrController" CANId="0x00" MyChildId="837">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective5Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="67" MyChildId="840">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective5</SimulationClass>
+        <TechReport Servos="10;Obj5 Correction1/60;Obj5 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective5.Correction1" DisplayName="Motorized Correction for Objective 5" DisplayName-de="Motorisierte Korrektur für Objektiv 5" MTBId="MTBObjective5Correction1" CANId="0x10" MyChildId="841">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective5.Correction2" DisplayName="Motorized Correction 2 for Objective 5" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 5" MTBId="MTBObjective5Correction2" CANId="0x20" MyChildId="842">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective5.Zoom" DisplayName="Motorized Zoom for Objective 5" DisplayName-de="Motorisiertes Zoom für Objektiv 5" MTBId="MTBObjective5Zoom" CANId="0x99" MyChildId="843">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="1" Max="4" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective5TempSensor" DisplayName="Temperature Sensor Objective 5" DisplayName-de="Temperatursensor Objektiv 5" MTBId="MTBObjective5TempSensor" CANId="0x60" MyChildId="845">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective5CorrController" DisplayName="Correction Controller for Objective 5" DisplayName-de="Korrektur-Controller für Objektiv 5" MTBId="MTBObjective5CorrController" CANId="0x00" MyChildId="847">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Class="MTBCtrlCorrObjectiveDevice,MTBKernelCAN29" Name="MotKorr.Objective6Control_Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="68" MyChildId="850">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceMotKorrObjective6</SimulationClass>
+        <TechReport Servos="10;Obj6 Correction1/60;Obj6 Temperature">ReportCAN29Node</TechReport>
+        <Components>
+          <Component Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective6.Correction1" DisplayName="Motorized Correction for Objective 6" DisplayName-de="Motorisierte Korrektur für Objektiv 6" MTBId="MTBObjective6Correction1" CANId="0x10" MyChildId="851">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlObjectiveCorrection,MTBKernelCAN29Servos" Name="Objective6.Correction2" DisplayName="Motorized Correction 2 for Objective 6" DisplayName-de="Motorisierte Korrektur 2 für Objektiv 6" MTBId="MTBObjective6Correction2" CANId="0x20" MyChildId="852">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="38000" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="%" Min="0" Max="100" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>3000</CmdSetTimeout>
+          </Component>
+          <Component Active="false" Class="MTBCtrlCan29ObjectiveZoom,MTBKernelCAN29Servos" Name="Objective6.Zoom" DisplayName="Motorized Zoom for Objective 6" DisplayName-de="Motorisiertes Zoom für Objektiv 6" MTBId="MTBObjective6Zoom" CANId="0x99" MyChildId="853">
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="10" Max="400" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="" Min="10.0" Max="40.0" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlObjectiveTemperatureSensor,MTBKernelCAN29Servos" Name="Castor.Objective6TempSensor" DisplayName="Temperature Sensor Objective 6" DisplayName-de="Temperatursensor Objektiv 6" MTBId="MTBObjective6TempSensor" CANId="0x60" MyChildId="855">
+            <Motorization>1</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Servo</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.0001</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="4095" MaxDeviation="5" TypDeviation="2" />
+              <ScaledRange Unit="°C" Min="-127.9375" Max="+127.9375" />
+            </PositionScales>
+            <SpeedScales>
+              <ADRange Min="1" Max="1" />
+              <ScaledRange Unit="" Min="1" Max="1" />
+            </SpeedScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlCan29ObjCorrController,MTBKernelCAN29" Name="Castor.Objective6CorrController" DisplayName="Correction Controller for Objective 6" DisplayName-de="Korrektur-Controller für Objektiv 6" MTBId="MTBObjective6CorrController" CANId="0x00" MyChildId="857">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>4000</CmdSetTimeout>
+          </Component>
+        </Components>
+      </Device>
+      <Device Class="MTBCtrlDefiniteFocus3Device,MTBKernelCan29" Name="Aquila.FocusStabilizer3" DisplayName="Definite Focus 3" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="96" MyChildId="13019">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceDefiniteFocus2</SimulationClass>
+        <Simulation />
+        <TechReport>ReportFocusStabilizer</TechReport>
+        <Components>
+          <Component Class="MTBCtrlCan29FocusStabilizer2,MTBKernelCan29" Name="FocusStabilizer" DisplayName="Definite Focus 3" MTBId="MTBFocusStabilizer2" CANId="0x00">
+            <CmdSetTimeout>60000</CmdSetTimeout>
+            <Statistics Enabled="true" Type="CAN29" Name="DefiniteFocus" ID1="0x60" ID2="0x00">
+              <Maximum Name="PowerCycles">4294967295</Maximum>
+              <Maximum Name="OperatingTime">4294967295</Maximum>
+            </Statistics>
+            <Statistics Enabled="true" Type="CAN29" Name="DefiniteFocusStabilizations" ID1="0x60" ID2="0x01" />
+            <Statistics Enabled="true" Type="CAN29" Name="DefiniteFocusFindFocus" ID1="0x60" ID2="0x02" />
+            <Statistics Enabled="true" Type="CAN29" Name="DefiniteFocusLED" ID1="0x60" ID2="0x20">
+              <Maximum Name="OperatingTime">4294967295</Maximum>
+            </Statistics>
+            <Statistics Enabled="true" Type="CAN29" Name="DefiniteFocusTubeLens" ID1="0x60" ID2="0x30" />
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Name="NoPiezofocus" DisplayName="No Piezo Focus" DisplayName-de="Kein Piezo-Fokus" External="true" PortType="RS232" PortNo="2" PortBaudAddr="9600" RTSCTS="true" MyChildId="30020" />
+      <Device Class="MTBCtrlDeviceAlbireo,MTBKernelFLLED" Name="Albireo.Base" DisplayName="Colibri 5/7" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CanNode="80" MTBId="MTBFLLEDShutter" MyChildId="13160" CANConnection="AquilaZ.Stand">
+        <LightPathLocation>ReflectedLight</LightPathLocation>
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireo</SimulationClass>
+        <Simulation />
+        <TechReport>ReportColibri7</TechReport>
+        <LampType>128</LampType>
+        <Components>
+          <Component Class="MTBCtrlFluorescenceLEDControl,MTBKernelFLLED" Name="Albireo.FLLEDController" DisplayName="Colibri 5/7" MTBId="MTBFLLEDController" CANId="0x00">
+            <Motorization>2</Motorization>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <NumberOfLEDs>6</NumberOfLEDs>
+          </Component>
+          <Component Active="false" Name="AlbireoLampModule.423052-9770-000" DisplayName="Light Source FR-R[G/Y]BV-UV" DisplayName-de="Lichtquelle FR-R[G/Y]BV-UV" MTBId="MTBNone" CANId="0x00" MyChildId="9170">
+            <Slave ChildId="9180">AlbireoLED.423052-8303-000</Slave>
+            <Slave ChildId="9181">AlbireoLED.423052-8305-000</Slave>
+            <Slave ChildId="9182">AlbireoLED.423052-8302-000</Slave>
+            <Slave ChildId="9183">AlbireoLED.423052-8308-000</Slave>
+            <Slave ChildId="9184">AlbireoLED.423052-8307-000</Slave>
+            <Slave ChildId="9185">AlbireoLED.423052-8300-000</Slave>
+            <Slave ChildId="9179">Albireo.2xFilterchanger_mot</Slave>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8303-000" DisplayName="LED UV" CANId="0x01" MTBId="MTBLED1" MyChildId="9180">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>385</Wavelength>
+              <OrderNo>423052-8303-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <EmissionFilter>
+              <Element Class="," Name="Albireo_Filter.385_30">
+                <ExcitationLow>370</ExcitationLow>
+                <ExcitationHigh>400</ExcitationHigh>
+              </Element>
+            </EmissionFilter>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8305-000" DisplayName="LED V" CANId="0x02" MTBId="MTBLED2" MyChildId="9181">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>425</Wavelength>
+              <OrderNo>423052-8305-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <EmissionFilter>
+              <Element Class="," Name="Albireo_Filter.423_44">
+                <ExcitationLow>401</ExcitationLow>
+                <ExcitationHigh>445</ExcitationHigh>
+              </Element>
+            </EmissionFilter>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8302-000" DisplayName="LED B" CANId="0x03" MTBId="MTBLED3" MyChildId="9182">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>472</Wavelength>
+              <OrderNo>423052-8302-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <EmissionFilter>
+              <Element Class="," Name="Albireo_Filter.469_38">
+                <ExcitationLow>450</ExcitationLow>
+                <ExcitationHigh>488</ExcitationHigh>
+              </Element>
+            </EmissionFilter>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8308-000" DisplayName="LED FR" CANId="0x04" MTBId="MTBLED4" MyChildId="9183">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>735</Wavelength>
+              <OrderNo>423052-8308-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <EmissionFilter>
+              <Element Class="," Name="Albireo_Filter.735_40">
+                <ExcitationLow>720</ExcitationLow>
+                <ExcitationHigh>750</ExcitationHigh>
+              </Element>
+            </EmissionFilter>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8307-000" DisplayName="LED G/Y" CANId="0x05" MTBId="MTBLED5" MyChildId="9184">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>567</Wavelength>
+              <OrderNo>423052-8307-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+          </Component>
+          <Component Class="MTBCtrlFluorescenceLED,MTBKernelFLLED" Name="AlbireoLED.423052-8300-000" DisplayName="LED R" CANId="0x06" MTBId="MTBLED6" MyChildId="9185">
+            <Motorization>2</Motorization>
+            <WriteConfig>xxxWriteConfigAquariusLED</WriteConfig>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceAlbireoLEDCommands</SimulationClass>
+            <Simulation>
+              <Wavelength>635</Wavelength>
+              <OrderNo>423052-8300-000</OrderNo>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="1" Max="1000" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="%" Min="0.1" Max="100" />
+            </PositionScales>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <EmissionFilter>
+              <Element Class="," Name="Albireo_Filter.631_33">
+                <ExcitationLow>615</ExcitationLow>
+                <ExcitationHigh>648</ExcitationHigh>
+              </Element>
+            </EmissionFilter>
+          </Component>
+          <Component Class="MTBCtrlFilterChangerFluorescenceLED,MTBKernelFLLED" Name="Albireo.2xFilterchanger_mot" MTBId="MTBFLLEDFilterChanger" CANId="0x07" MyChildId="9179">
+            <NumberOfPositions>2</NumberOfPositions>
+            <Motorization>2</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimCAN29Changer</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.1</TypMovementTime>
+            </Simulation>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlExcitationFilter,MTBKernel" Name="Albireo_Filter.555_30" Position="0">
+                <Area>
+                  <ExcitationLow>540</ExcitationLow>
+                  <ExcitationHigh>570</ExcitationHigh>
+                </Area>
+              </Element>
+              <Element Class="MTBCtrlExcitationFilter,MTBKernel" Name="Albireo_Filter.590_27" Position="1">
+                <Area>
+                  <ExcitationLow>577</ExcitationLow>
+                  <ExcitationHigh>604</ExcitationHigh>
+                </Area>
+              </Element>
+            </ChangerElements>
+          </Component>
+        </Components>
+        <Slave ChildId="9170">AlbireoLampModule.423052-9770-000</Slave>
+      </Device>
+      <Device Active="false" Name="ApoTome.none" MyChildId="13165" />
+      <Device Active="false" Name="TIRF.none" MyChildId="9200" />
+      <Device Active="false" Name="Safety_Device.None" DisplayName="No Microscope Safety Device" DisplayName-de="Kein Mikroskop Safety Device" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" MyChildId="13020" />
+      <Device Active="false" Class="MTBCtrlCan29Device,MTBKernelCan29" Name="IncubationPeCon.AtmoTemp_Base" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CanNode="73" MyChildId="14000" CANConnection="AquilaZ.Stand">
+        <SimulationMode>false</SimulationMode>
+        <Components>
+          <Component Active="false" Name="IncubationPeCon.O2Module_none" MTBId="MTBNone" CANId="0x00" MyChildId="14012" />
+          <Component Active="false" Name="IncubationPeCon.AirHeaterModule_none" MTBId="MTBNone" CANId="0x00" MyChildId="14013" />
+        </Components>
+        <Slave ChildId="14010">IncubationPeCon.TemperatureModule</Slave>
+        <Slave ChildId="14011">IncubationPeCon.CO2Module</Slave>
+      </Device>
+      <Device Class="MTBCtrlDevicePeCon,MTBKernelPeCon" Name="IncubationPeCon.TemperatureModule" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="73" MyChildId="14010">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDevicePeConTemperatureModule</SimulationClass>
+        <TechReport>ReportPeconTempModule</TechReport>
+        <Components>
+          <Component Class="MTBCtrlIncubationTemperatureChannelPeCon,MTBKernelPeCon" Name="IncubationPeCon.TempChannel1" MTBId="MTBIncubationTemperatureChannel1" CANId="0x01">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="999" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="°C" Min="0" Max="99.9" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+          <Component Class="MTBCtrlIncubationTemperatureChannelPeCon,MTBKernelPeCon" Name="IncubationPeCon.TempChannel2" MTBId="MTBIncubationTemperatureChannel2" CANId="0x02">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="999" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="°C" Min="0" Max="99.9" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+          <Component Class="MTBCtrlIncubationTemperatureChannelPeCon,MTBKernelPeCon" Name="IncubationPeCon.TempChannel3" MTBId="MTBIncubationTemperatureChannel3" CANId="0x03">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="999" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="°C" Min="0" Max="99.9" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+          <Component Class="MTBCtrlIncubationTemperatureChannelPeCon,MTBKernelPeCon" Name="IncubationPeCon.TempChannel4" MTBId="MTBIncubationTemperatureChannel4" CANId="0x04">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="999" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="°C" Min="0" Max="99.9" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+          <Component Class="MTBCtrlIncubationCalibrationSensorPeCon,MTBKernelPeCon" Name="IncubationPeCon.CalibrationSensor" MTBId="MTBIncubationCalibrationSensor" CANId="0x00">
+            <Motorization>1</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="999" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="°C" Min="0" Max="99.9" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+        </Components>
+      </Device>
+      <Device Class="MTBCtrlDevicePeCon,MTBKernelPeCon" Name="IncubationPeCon.CO2Module" External="false" PortType="USB" PortNo="4100" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="74" MyChildId="14011">
+        <SimulationMode>false</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDevicePeConCO2Module</SimulationClass>
+        <TechReport>ReportPeconCO2Module</TechReport>
+        <Components>
+          <Component Class="MTBCtrlIncubationCO2ChannelPeCon,MTBKernelPeCon" Name="IncubationPeCon.CO2Channel" MTBId="MTBIncubationCO2Channel" CANId="0x01">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="200" MaxDeviation="1" TypDeviation="1" />
+              <ScaledRange Unit="%" Min="0.0" Max="20.0" />
+            </PositionScales>
+            <SettleWaitTime>300</SettleWaitTime>
+          </Component>
+          <Component Class="MTBCtrlIncubationCO2FanPeCon,MTBKernelPeCon" Name="IncubationPeCon.CO2Fan" MTBId="MTBIncubationCO2Fan" CANId="0x00">
+            <Motorization>2</Motorization>
+            <SimulationClass />
+            <Simulation>
+              <TypMovementTime>0.002</TypMovementTime>
+            </Simulation>
+            <PositionScales>
+              <ADRange Min="0" Max="9" MaxDeviation="0" TypDeviation="0" />
+              <ScaledRange Unit="Level" Min="0" Max="9" />
+            </PositionScales>
+          </Component>
+        </Components>
+      </Device>
+      <Device Active="false" Name="REOEM.none" MyChildId="13013" />
+      <Device Active="false" Name="NoFilterWheelsShutters" DisplayName="No Filter Wheels and Shutters" DisplayName-de="Keine Filterräder und Verschlüsse" External="true" PortType="RS232" PortNo="2" PortBaudAddr="9600" RTSCTS="true" MyChildId="30050" />
+      <Device Active="false" Name="Shutters.Uniblitz.No" DisplayName="No Shutters" DisplayName-de="Keine Verschlüsse" External="true" PortType="RS232" PortNo="2" PortBaudAddr="9600" RTSCTS="true" MyChildId="30070" />
+      <Device Active="false" Name="IOCard.NoIOCard" DisplayName="No IOCard" DisplayName-de="Keine IO-Karte" External="true" PortType="RS232" PortNo="2" PortBaudAddr="9600" RTSCTS="true" MyChildId="25100" />
+    </Devices>
+  </MTBConfiguration>
+</MTB2004Export>
