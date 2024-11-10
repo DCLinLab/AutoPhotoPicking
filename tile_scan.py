@@ -1,2 +1,0 @@
-tile = ZenService.Experiment.CurrentTileIndex
-

@@ -33,7 +33,7 @@ Turn on the server, port 2222.
 #### Install packages
 
 ```bash
-pip install matplotlib scikit-image cython findmaxima2d
+pip install matplotlib scikit-image cython findmaxima2d flask
 python setup.py build_ext --inplace
 ```
 
@@ -43,9 +43,13 @@ python setup.py build_ext --inplace
 pip install git+https://github.com/vanvalenlab/cellSAM.git
 ```
 
-**After setting up PolyScan servers**, run one of the scripts in this repo to start a server that constantly monitors if any new image to segment is generated and submit the segmentation to Polyscan. You should modify the config file accordingly.
+#### Run server
 
-Once started, both connections to 2222 and 2228 should be updated frequently, and **the config file will only be loaded once**.
+```bash
+flask --app main run
+```
+
+The service will be available at `127.0.0.1:5000`.
 
 ### Zen
 
