@@ -1,6 +1,7 @@
 import struct
 import socket
 import numpy as np
+import time
 
 
 def Convert(img):
@@ -38,19 +39,20 @@ def connect(host, port, port_trigger):
 
 
 class PolyScan:
-    def __init__(self, host, port, port_trigger, trigger_name):
+    def __init__(self, host, port_polygon, port_trigger, trigger_name, delay):
         self.remote_ip = socket.gethostbyname(host)
-        self.port = port
+        self.port_polygon = port_polygon
         self.port_trigger = port_trigger
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.s_trigger = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.trigger_name = trigger_name
+        self.delay = delay
 
     def connect(self):
-        self.s.connect((self.remote_ip, self.port))
+        self.s.connect((self.remote_ip, self.port_polygon))
         self.s_trigger.connect((self.remote_ip, self.port_trigger))
 
-    def send(self, img):
+    def exec(self, img):
         img = (img > 0) * np.ones(img.shape)
         pat = Convert(img)
         func = np.uint32(2)
@@ -61,6 +63,7 @@ class PolyScan:
         self.s.send(h)
         self.s.send(pat)
         SoftwareTrigger(self.s_trigger, self.trigger_name)
+        time.sleep(self.delay)
 
     def close(self):
         self.s.close()
